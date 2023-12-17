@@ -38,7 +38,7 @@ const People = ({ peopleLength, PeopleData}) => {
 					))}
 				</section>
 			) : (
-				<span>Please come back later</span>
+				<span>Please refresh to get new notifications</span>
 			)}
 		</section>
 	);

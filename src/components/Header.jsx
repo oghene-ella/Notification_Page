@@ -15,6 +15,7 @@ const Header = () => {
     });
 
     setTotalUnread(0);
+    console.log('All notifications marked as read');
   };
 
   return (
