@@ -10,6 +10,16 @@ const Header = () => {
     }
   });
 
+  const markAllRead = () => {
+    peopleData.forEach(person => {
+      if (person.status === "unread") {
+        person.status = "read";
+        totalUnread--;
+      }
+    });
+    console.log("All notifications marked as read");
+  }
+
   return (
     <section className='flex justify-between'>
       <span className='flex gap-3 md:gap-6 items-center'>
@@ -18,7 +28,9 @@ const Header = () => {
           {totalUnread}
         </button>
       </span>
-      <p className='text-lightTextGray cursor-pointer hover:underline'>Mark all as read</p>
+      <button className='text-lightTextGray cursor-pointer hover:underline' onClick={markAllRead}>
+        Mark all as read
+      </button>
     </section>
   );
 };

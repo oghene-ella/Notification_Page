@@ -9,7 +9,7 @@ const People = ({ peopleLength, PeopleData}) => {
 					{PeopleData.map((people) => (
 						<section
 							key={people.id}
-							className={`flex gap-3 items-start py-3 px-5 rounded-lg ${people.status === "unread" ? "bg-lightGray" : "white"}`}
+							className={`flex gap-3 items-start py-3 px-5 rounded-lg cursor-pointer hover:bg-blue-100 ${people.status === "unread" ? "bg-lightGray" : "white"}`}
 						>
 							<img src={`./${people.profile}`} alt={`${people.name}`} className="w-12"/>
                             <section className="flex flex-col gap-1">
