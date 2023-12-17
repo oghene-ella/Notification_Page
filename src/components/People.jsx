@@ -29,7 +29,7 @@ const People = ({ peopleLength, PeopleData}) => {
                                 <p className="text-gray-400 font-medium text-sm">{people.time}</p>
 
                                 {people.dm && people.dm.length > 1 && (
-                                    <p className="px-4 py-2 border border-gray-200 text-sm text-lightTextGray">
+                                    <p className="px-4 py-3 border border-gray-200 text-sm text-lightTextGray">
                                         {people.dm}
                                     </p>
                                 )}
