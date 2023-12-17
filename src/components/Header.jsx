@@ -1,23 +1,6 @@
-import React, { useState } from 'react';
-import peopleData from '../data';
+import React from 'react';
 
-const Header = () => {
-  const [totalUnread, setTotalUnread] = useState(
-    peopleData.filter(person => person.status === 'unread').length
-  );
-
-  const markAllRead = () => {
-    const updatedPeopleData = peopleData.map(person => {
-      if (person.status === 'unread') {
-        return { ...person, status: 'read' };
-      }
-      return person;
-    });
-
-    setTotalUnread(0);
-    console.log('All notifications marked as read');
-  };
-
+const Header = ({ totalUnread, markAllRead }) => {
   return (
     <section className="flex justify-between">
       <span className="flex gap-3 md:gap-6 items-center">

@@ -1,12 +1,12 @@
 import React from "react";
 import "../styles/local.css"
 
-const People = ({ peopleLength, PeopleData}) => {
+const People = ({ peopleData}) => {
 	return (
 		<section>
-			{peopleLength > 0 ? (
+			{peopleData.length > 0 ? (
 				<section className="flex flex-col gap-4">
-					{PeopleData.map((people) => (
+					{peopleData.map((people) => (
 						<section
 							key={people.id}
 							className={`flex gap-3 items-start py-3 px-5 rounded-lg cursor-pointer hover:bg-blue-100 ${people.status === "unread" ? "bg-lightGray" : "white"}`}
