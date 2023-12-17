@@ -1,9 +1,12 @@
 import "./styles/local.css"
+import Header from "./components/Header";
 
-const App = () =>{
+const App = () => {
   return (
-    <section className="App bg-backgroundColor">
-      <h1 className="bg-red-600 text-5xl text-white">Hello</h1>
+    <section className="App bg-backgroundColor w-full h-screen flex justify-center items-center">
+      <section className="w-2/3 bg-white px-7 py-10 rounded-xl">
+        <Header />
+      </section>
     </section>
   );
 }
