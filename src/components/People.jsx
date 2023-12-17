@@ -13,10 +13,10 @@ const People = ({ peopleLength, PeopleData}) => {
 						>
 							<img src={`./${people.profile}`} alt={`${people.name}`} className="w-12"/>
                             <section className="flex flex-col gap-1">
-                                <div className="flex gap-2 items-center">
-                                    <h3 className="text-textGray font-bold">{people.name}</h3>
-                                    <p className="text-lightTextGray font-light">{people.description}</p>
-                                    <p className="font-extrabold" style={{color: people.color}}>{people.post}</p>
+                                <div className="flex flex-wrap gap-2 items-center ">
+                                    <h3 className="text-textGray font-bold text-sm">{people.name}</h3>
+                                    <p className="text-lightTextGray font-light break-all text-sm">{people.description}</p>
+                                    <p className="font-extrabold text-sm" style={{color: people.color}}>{people.post}</p>
                                     {
                                         people.status === "unread" ? (
                                             <button className="bg-redColor w-2 h-2 rounded-full"></button>
