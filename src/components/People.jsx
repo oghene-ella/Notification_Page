@@ -5,35 +5,40 @@ const People = ({ peopleLength, PeopleData}) => {
 	return (
 		<section>
 			{peopleLength > 0 ? (
-				<section className="flex flex-col gap-6">
+				<section className="flex flex-col gap-4">
 					{PeopleData.map((people) => (
 						<section
 							key={people.id}
-							className={`flex gap-3 items-center ${people.status ? "read" : "unread"}`}
+							className={`flex gap-3 items-start py-3 px-5 rounded-lg ${people.status === "unread" ? "bg-lightGray" : "white"}`}
 						>
 							<img src={`./${people.profile}`} alt={`${people.name}`} className="w-12"/>
-                            <section className="flex flex-col gap-2">
+                            <section className="flex flex-col gap-1">
                                 <div className="flex gap-2 items-center">
                                     <h3 className="text-textGray font-bold">{people.name}</h3>
                                     <p className="text-lightTextGray font-light">{people.description}</p>
-                                    <p className={`text-${people.color} font-bold`}>{people.post}</p>
+                                    <p className="font-extrabold" style={{color: people.color}}>{people.post}</p>
                                     {
                                         people.status === "unread" ? (
-                                            <button className="bg-redColor w-3 h-3 rounded-full"></button>
+                                            <button className="bg-redColor w-2 h-2 rounded-full"></button>
                                         ) : (
-                                            <button className="bg-gray-100 w-3 h-3 rounded-full"></button>
+                                            <button className="bg-blue-200 w-2 h-2 rounded-full"></button>
                                         )
                                     }
                                 </div>
                                 
                                 <p className="text-gray-400 font-medium text-sm">{people.time}</p>
 
+                                {people.dm && people.dm.length > 1 && (
+                                    <p className="px-4 py-2 border border-gray-200 text-sm text-lightTextGray">
+                                        {people.dm}
+                                    </p>
+                                )}
                             </section>
 						</section>
 					))}
 				</section>
 			) : (
-				<span className="span">We currently do not have any. We're still working on our menu. Please come back later</span>
+				<span>Please come back later</span>
 			)}
 		</section>
 	);

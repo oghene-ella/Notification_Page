@@ -18,7 +18,7 @@ const Header = () => {
           {totalUnread}
         </button>
       </span>
-      <p className='text-lightTextGray'>Mark all as read</p>
+      <p className='text-lightTextGray cursor-pointer hover:underline'>Mark all as read</p>
     </section>
   );
 };
